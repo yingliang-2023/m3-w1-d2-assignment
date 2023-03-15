@@ -7,19 +7,24 @@ block content
             for error in errors 
                 li=error.msg
               
-    form(action = "." method = "post")
+    form(action = "." method = "post" class="form-registration")
         label(for = "name") Name:
         input(
             type = "text",
             id = "name",
-            name = "name"
+            name = "name",
+            class="form-control",
             value=data.name 
         )
 
         label(for = "email") Email:
         input(type = "email",
              id = "email",
-            name = "email")
+             class="form-control",
+            name = "email"
+            )
 
         input(type = "submit",
-            value = "Submit")
+            value = "Submit"
+            class="btn btn-lg btn-primary btn-block"
+            )
