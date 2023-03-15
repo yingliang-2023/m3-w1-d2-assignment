@@ -1,10 +1,5 @@
 require('dotenv').config();
-const mongoose = require('mongoose');
-const app=require('./app');
 
-const server=app.listen(3000,()=>{
-    console.log(`Express is running on port ${server.address().port}`);
-});
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE,{
@@ -18,3 +13,13 @@ mongoose.connection.on('open',()=>{
 .on('error',(err)=>{
     console.log(`connection error,${err.message}`);
 });
+
+require('./models/Registration');
+const app=require('./app');
+
+const server=app.listen(3000,()=>{
+    console.log(`Express is running on port ${server.address().port}`);
+});
+
+
+
